@@ -34,7 +34,7 @@ class Instagram:
             ext = self.get_media_extension(story)
             filename = '{}_{}'.format(user_name, formatted_date, ext)
             file = '{}.{}'.format(filename, ext)
-            if not os.path.exists(file):
+            if not os.path.exists(path + '/' + file):
                 print('Downloading story {} from {}'.format(story.pk, user_id))
                 self.client.story_download(story.pk, filename, path)
 
