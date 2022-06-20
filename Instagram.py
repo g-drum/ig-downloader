@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 
@@ -35,7 +36,8 @@ class Instagram:
             filename = '{}_{}'.format(user_name, formatted_date, ext)
             file = '{}.{}'.format(filename, ext)
             if not os.path.exists(path + '/' + file):
-                print('Downloading story {} [{}] from {} [{}]'.format(
+                print('[{}] Downloading story {} [{}] from {} [{}]'.format(
+                        datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                         story.pk,
                         story.taken_at.timestamp(),
                         user_id,
