@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
-from datetime import datetime
+import os
 
 from Instagram import Instagram
 
 
 def main():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     users = json.load(open('users.json'))
     credentials = json.load(open('credentials.json'))
     ig = Instagram(credentials['user'], credentials['password'])
